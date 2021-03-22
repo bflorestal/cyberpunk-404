@@ -1,0 +1,319 @@
+@charset "UTF-8";
+* {
+  /*asterix means everything*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*Polices d'écriture*/
+@font-face {
+  font-family: "induction";
+  src: url("../fonts/induction.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Cyberpunk";
+  src: url("../fonts/Cyberpunk.ttf") format("truetype");
+}
+body {
+  background: #0016ee;
+  background-image: url("../img/cpbg.jpg");
+}
+@media screen and (max-width: 2160px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/*Le 404*/
+.qcq {
+  text-align: center;
+  font-family: "induction";
+  color: white;
+  text-shadow: 7px 7px black;
+  margin: 10vh auto;
+}
+.qcq h1 {
+  font-size: 8rem;
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 768px) {
+  .qcq h1 {
+    font-size: 4rem;
+  }
+}
+.qcq h2 {
+  font-size: 2rem;
+}
+@media screen and (max-width: 768px) {
+  .qcq h2 {
+    font-size: 1rem;
+  }
+}
+
+/*Le 404//*/
+/*----------NAV BAR----------*/
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  font-family: "Poppins", sans-serif;
+  background-color: black;
+}
+nav .logo {
+  color: #defe47;
+  font-family: "Cyberpunk", sans-serif;
+  letter-spacing: 5px;
+  font-size: 20px;
+}
+@media screen and (max-width: 768px) {
+  nav .logo {
+    margin-left: 2rem;
+    margin-bottom: 6px;
+  }
+}
+
+.nav-links {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 0px;
+  height: 92vh;
+  top: 8vh;
+  background-color: black;
+  align-items: center;
+  transform: translateX(-100%);
+  transition: 0.5s ease-in;
+  justify-content: space-around;
+  width: 30%;
+}
+@media screen and (max-width: 1200px) {
+  .nav-links {
+    width: 45%;
+  }
+}
+.nav-links li {
+  list-style: none;
+}
+@media screen and (max-width: 2160px) {
+  .nav-links li {
+    opacity: 0;
+  }
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+/* Menu accordéon */
+.nav-links ul {
+  margin-top: 1rem;
+  list-style: none;
+  height: 0;
+  overflow: hidden;
+  transition: 1s;
+}
+@media screen and (max-width: 768px) {
+  .nav-links ul a {
+    font-size: 14px;
+  }
+}
+.nav-links li {
+  text-align: center;
+}
+.nav-links li:hover ul {
+  height: 100px;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+@media screen and (max-width: 2160px) {
+  .burger {
+    position: absolute;
+    display: block;
+    left: 20px;
+  }
+}
+.burger div {
+  width: 40px;
+  height: 6px;
+  background-color: #defe47;
+  margin: 7px;
+  border-radius: 1px;
+  transition: all 0.3s ease;
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 13.5px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -13.5px);
+}
+
+/*----------NAV BAR----------//*/
+.blackshade {
+  background-color: rgba(0, 0, 0, 0.459);
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* Fond transparent sur mobile quand on ouvre le menu burger */
+.darker-bg {
+  background-color: rgba(0, 0, 0, 0.637);
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 55%;
+  height: 92%;
+  opacity: 0%;
+  transition: opacity 1s ease-in;
+}
+
+@media screen and (max-width: 768px) {
+  .show-darker-bg {
+    display: block;
+    opacity: 100%;
+  }
+}
+
+/*--------------------Animations--------------------*/
+/*Circle Animation*/
+.circleanimation {
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 5px solid #bbd43e;
+  border-top: 10px solid #defe47;
+  animation: circleanimationanimation 1.5s infinite linear;
+}
+
+@keyframes circleanimationanimation {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+/*Circle Animation//*/
+/*Rectangles Animation*/
+.rectangleanimation {
+  display: none;
+  margin: 50vh auto;
+  width: 100px;
+  height: 60px;
+  text-align: center;
+  font-size: 30px;
+}
+.rectangleanimation div {
+  background-color: #defe47;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+  animation: rectangleanimationanimation 1.2s infinite ease-in-out;
+}
+.rectangleanimation .rect1 {
+  animation-delay: 0s;
+}
+.rectangleanimation .rect2 {
+  animation-delay: -1.1s;
+}
+.rectangleanimation .rect3 {
+  animation-delay: -1s;
+}
+.rectangleanimation .rect4 {
+  animation-delay: -0.9s;
+}
+.rectangleanimation .rect5 {
+  animation-delay: -0.8s;
+}
+
+@keyframes rectangleanimationanimation {
+  0%, 40%, 100% {
+    transform: scaleY(0.4);
+  }
+  20% {
+    transform: scaleY(1);
+  }
+}
+/*Rectangles Animation//*/
+/*--------------------The variable for js that decides whether stuff shows up or not---------------------*/
+.show {
+  display: flex;
+}
+
+.show2anim {
+  display: inline-block;
+}
+
+/*--------------------The variable for js that decides whether stuff shows up or not---------------------//*/
+/* c'est le scss pour l'animation avec la barre (pas utilisé)
+
+.my-div {
+  width: 300px;
+  height: 100px;
+  border: 2px solid $primary;
+  background-color: $secondary;
+  position: relative;
+  animation-name: moove;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes moove {
+  from {
+    width: 300px;
+    background-color: $secondary;
+  }
+
+  50% {
+    width: 600px;
+  }
+
+  to {
+    width: 900px;
+    background-color: $danger;
+  }
+} */
+
+/*# sourceMappingURL=style.css.map */

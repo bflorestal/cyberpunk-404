@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <title>Projet Janvresse</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+  <body>
+    <nav>
+      <ul class="nav-links">
+        <li>
+          <a href="#">CIRCLE</a>
+          <ul>
+            <li>
+              <a href="#" onclick="opencircleanim()" class="btnanimation1"
+                >Animation</a
+              >
+            </li>
+            <li>
+              <a href="#" onclick="opencircleanim()" class="btnanimation1"
+                >Animation</a
+              >
+            </li>
+            <li>
+              <a href="#" onclick="opencircleanim()" class="btnanimation1"
+                >Animation</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">RECTANGLE</a>
+          <ul>
+            <li>
+              <a href="#" onclick="openrectangleanim()" class="btnanimation2"
+                >Animation</a
+              >
+            </li>
+            <li>
+              <a href="#" onclick="openrectangleanim()" class="btnanimation2"
+                >Animation</a
+              >
+            </li>
+            <li>
+              <a href="#" onclick="openrectangleanim()" class="btnanimation2"
+                >Animation</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- fond noir transparent sur mobile -->
+      <div class="darker-bg" id="darker-bg"></div>
+
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+      <div class="logo">
+        <h2>Cyberpunk</h2>
+      </div>
+    </nav>
+    <!--le fond noir transparent là-->
+    <div onclick="closeanim()" class="blackshade" id="blackshade">
+      <div class="circleanimation" id="circleanimation"></div>
+      <!--<div class="circleanimationblue"></div>-->
+      <div class="rectangleanimation" id="rectangleanimation">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+      </div>
+      <!-- <div class="my-div"></div> c'est la div pour l'animation avec la barre (pas utilisée) -->
+    </div>
+
+    <!--Le 404-->
+    <div class="qcq">
+      <h1>404</h1>
+      <h2>Page introuvable</h2>
+    </div>
+    <script src="JS/script.js"></script>
+  </body>
+</html>
