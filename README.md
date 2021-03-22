@@ -1,14 +1,14 @@
 # cyberpunk-404
 
-## Avant-propos :
+## Avant-propos
 L'objectif est de créer une page 404, statique, au sein d'une application web simulée. 
 
-## Technologies utilisées : 
+## Technologies utilisées
 - [x] HTML
 - [x] JavaScript
 - [x] SCSS (une fois compilé CSS)
 
-## Cahier des charges :
+## Cahier des charges
 
 ### Une barre de navigation :
 - Doit contenir le bouton permettant d’afficher / cacher le burger menu
